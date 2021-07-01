@@ -1,0 +1,24 @@
+.photo-grid {
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+
+    /* If we want all our rows to be exactly 240 px tall, then */
+    grid-auto-rows: 240px;
+}
+
+/* We do not want to apply these below classes at smaller sizes, because grid will break at those sizes */
+
+@media screen and (min-width: 600px) {
+    .card-tall {
+        grid-row: span 2 / auto;        /* If we apply grid-row on any element, then it spans accordingly the 
+                                            number of rows eg. grid-row: 1 / 4 */
+                                        /* start at row 1 end at row 4 */
+    }
+    
+    .card-wide {
+        grid-column: span 2 / auto;
+    }
+}
+
