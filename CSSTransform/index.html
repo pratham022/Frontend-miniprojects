@@ -40,10 +40,40 @@
             transform: translate(30px, 60px); */
         }
 
+
+        /* The skew() CSS function defines a transformation that skews an element on the 2D plane. */
+        div {
+            transform: skew(30deg, 50deg);
+        }
+
+        /* Combining multiple transforms*/
+        div {
+            transform: rotate(30deg) scaleX(0.75) scaleY(0.4);
+        }
+
+        /* But, a drawback here is that, if we want to override the transform,
+            we have to specify all the functions all over again
+        */
+
+        .big {
+            transform: scaleX(2);
+        }
+
+        /* Suppose I apply this class over a div, then the previously applied rotate, and other transforms
+        will be overridden
+        
+        so, i will have to mention the chain all over again
+        transform: rotate(30deg) scaleX(2) scaleY(0.4);
+        */
+
+        .move {
+            transform: translate(-50px);
+        }
+
     </style>
 </head>
 <body>
-    <div>
+    <div class="big">
         <h4>Hello</h4>
     </div>
 </body>
