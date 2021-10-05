@@ -40,6 +40,28 @@
             transform: translate(30px, 60px); */
         }
 
+        div {
+            position: relative;
+        }
+
+        /* The ::after selector inserts something after the content of each selected element(s). 
+            Use the content property to specify the content to insert. */
+        div::after {
+            content: 'After';
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 50%;      
+            transform: translate(-50%);
+
+            /* If we use only left: 50%, then the after content WILL START from center
+                But, we want the after content TO BE IN THE CENTER
+            */
+            /* So, by using the combination of left and translate, we have centered the 
+                after content in the top of the div
+            */
+        }
+
     </style>
 </head>
 <body>
