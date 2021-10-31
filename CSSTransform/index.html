@@ -12,6 +12,7 @@
             --scX: 0.75;
             --transX: 50px;
         }
+
         div {
             background-color: blue;
             width: 100px;
@@ -22,9 +23,11 @@
             align-items: center;
             transform: rotate(var(--rot)) scaleX(var(--scX)) translateX(var(--transX));
         }
+
         div {
             position: relative;
         }
+
       
         /* The ::after selector inserts something after the content of each selected element(s). 
             Use the content property to specify the content to insert. */
@@ -35,34 +38,39 @@
             top: 0;
             left: 50%;      
             transform: translate(-50%);
+        }
 
             /* If we use only left: 50%, then the after content WILL START from center
                 But, we want the after content TO BE IN THE CENTER
-            */
-            /* So, by using the combination of left and translate, we have centered the 
-                after content in the top of the div
-            */
+           
+            So, by using the combination of left and translate, we have centered the 
+                after content in the top of the div */
+           
 
-        /* The skew() CSS function defines a transformation that skews an element on the 2D plane. */
-        div {
-            transform: skew(30deg, 50deg);
-        }
+            /* The skew() CSS function defines a transformation that skews an element on the 2D plane. */
 
-        /* Combining multiple transforms*/
-        div {
-            transform: rotate(30deg) scaleX(0.75) scaleY(0.4);
-        }
+            /* div {
+                transform: skew(30deg, 50deg);
+            } */
 
-        /* But, a drawback here is that, if we want to override the transform,
-            we have to specify all the functions all over again
-        */
-        .big {
-            --rot: 60deg;
-            --scX: 2;
-        }
-        .move {
-            --transX: 100px;
-        }
+
+            /* Combining multiple transforms */
+            /* div {
+                transform: rotate(30deg) scaleX(0.75) scaleY(0.4);
+            } */
+
+            /* But, a drawback here is that, if we want to override the transform,
+                we have to specify all the functions all over again */
+           
+
+            /* .big {
+                --rot: 60deg;
+                --scX: 2;
+            }
+
+            .move {
+                --transX: 100px;
+            } */
 
     </style>
 </head>
