@@ -7,6 +7,11 @@
     <title>Document</title>
 
     <style>
+        :root {
+            --rot: 30deg;
+            --scX: 0.75;
+            --transX: 50px;
+        }
         div {
             background-color: blue;
             width: 100px;
@@ -15,34 +20,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        div {
-            /* transform: rotate(90deg); */
-
-            /* We can also specify in terms of number of turns */
-            /* transform: rotate(0.25turn); */     /*  0.25 means a quarter turns = 90 deg */
-
-            /* Similarly rotate x, y, z works on the respective axes */
-
-
-            /* Scale helps in making object larger or smaller */
-
-            /* transform: scale(2);             */
-
-            /* scale(xAxis, yAxis) */
-            /* transform: scale(2, 1.5);            */
-
-            /* translate in X direction */
-            /* transform: translate(30px);   
-            
-            transform: translateY(50px);
-
-            transform: translate(30px, 60px); */
+            transform: rotate(var(--rot)) scaleX(var(--scX)) translateX(var(--transX));
         }
         div {
             position: relative;
         }
-
+      
         /* The ::after selector inserts something after the content of each selected element(s). 
             Use the content property to specify the content to insert. */
         div::after {
@@ -73,26 +56,18 @@
         /* But, a drawback here is that, if we want to override the transform,
             we have to specify all the functions all over again
         */
-
         .big {
-            transform: scaleX(2);
+            --rot: 60deg;
+            --scX: 2;
         }
-
-        /* Suppose I apply this class over a div, then the previously applied rotate, and other transforms
-        will be overridden
-        
-        so, i will have to mention the chain all over again
-        transform: rotate(30deg) scaleX(2) scaleY(0.4);
-        */
-
         .move {
-            transform: translate(-50px);
+            --transX: 100px;
         }
 
     </style>
 </head>
 <body>
-    <div class="big">
+    <div class="big move">
         <h4>Hello</h4>
     </div>
 </body>
